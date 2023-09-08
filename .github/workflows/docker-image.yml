@@ -18,10 +18,8 @@ jobs:
           username: ${{ secrets.DOCKERHUB_LOGIN }}
           password: ${{ secrets.DOCKERHUB_PASS }}
       - uses: actions/checkout@v3
-      - name: Generate version number
-        run: export VERSION=$(date +%s)
       - name: Build the Docker image
-        run: docker build . --file Dockerfile --tag jscoba/ccextra:$(VERSION)
+        run: docker build . --file Dockerfile --tag jscoba/ccextra:$(GITHUB_JOB)
       - name: Pushes the image to docker hub
-        run: docker push jscoba/ccextra:$(VERSION)
+        run: docker push jscoba/ccextra:$(GITHUB_JOB)
 
