@@ -13,3 +13,4 @@ sqlparse==0.4.4
 typing_extensions==4.7.1
 Werkzeug==2.3.7
 zipp==3.16.2
+psycopg
