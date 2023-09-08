@@ -19,7 +19,7 @@ jobs:
           password: ${{ secrets.DOCKERHUB_PASS }}
       - uses: actions/checkout@v3
       - name: Build the Docker image
-        run: docker build . --file Dockerfile --tag jscoba/ccextra:$(GITHUB_JOB)
+        run: docker build . --file Dockerfile --tag jscoba/ccextra:$(echo $GITHUB_JOB)
       - name: Pushes the image to docker hub
-        run: docker push jscoba/ccextra:$(GITHUB_JOB)
+        run: docker push jscoba/ccextra:$(echo $GITHUB_JOB)
 
