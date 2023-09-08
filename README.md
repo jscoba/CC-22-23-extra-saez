@@ -75,3 +75,12 @@ docker run  -p 8080:8000 -it jscobaccextra:1
 ```
 
 En este modo el servicio todavía no es persistente (no se guardan datos entre reinicios).
+
+
+La imagen está disponible en el docker hub
+[https://hub.docker.com/r/jscoba/ccextra](https://hub.docker.com/r/jscoba/ccextra)
+
+Se puede correr directamente con
+```bash
+docker run  -p 8080:8000 -it jscoba/ccextra:1
+```
