@@ -64,3 +64,14 @@ Respuesta: HTTP 204 No Content
 
 El servicio se ha construido utilizando Django y Django Rest Framework para su desarrollo. Esto se debe a las facilidades de integración con distintos sistemas de bases de datos y la rapidez de programación y seguridad integrada de las APIs REST generadas con estas herramientas.
 
+## Empaquetamiento del servicio como contenedor.
+
+El servicio se puede empaquetar como un contenedor. Para ello se puede generar una imagen docker con el Dockerfile proporcionado. Esta imagen está basada en python:slim, por lo que el tamaño de la imagen es reducido (para lo sencillo que es el servicio no nos hacen falta más librerías en la imagen base.). Se podría haber usado python con base alpine pero a veces da problemas dentro de RedUGR, por lo que se ha usado la versión basada en Debian.
+
+Se puede construir (y correr) usando el comando:
+```bash
+docker build -t jscobaccextra:1 .
+docker run  -p 8080:8000 -it jscobaccextra:1
+```
+
+En este modo el servicio todavía no es persistente (no se guardan datos entre reinicios).
