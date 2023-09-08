@@ -17,9 +17,9 @@ jobs:
         with:
           username: ${{ secrets.DOCKERHUB_LOGIN }}
           password: ${{ secrets.DOCKERHUB_PASS }}
-    - uses: actions/checkout@v3
-    - name: Build the Docker image
-      run: docker build . --file Dockerfile --tag jscoba/ccextra:$(date +%s)
-    - name: Pushes the image to docker hub
-      run: docker push jscoba/ccextra:$(date +%s)
+      - uses: actions/checkout@v3
+      - name: Build the Docker image
+        run: docker build . --file Dockerfile --tag jscoba/ccextra:$(date +%s)
+      - name: Pushes the image to docker hub
+        run: docker push jscoba/ccextra:$(date +%s)
 
